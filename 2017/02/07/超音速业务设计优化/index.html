@@ -85,18 +85,21 @@
 
 
 <meta name="description" content="cibuild、checkitem、checknote等的状态，看下能否统一
-CheckActivityAssociation，看下是否和DataAssociation统一集成大模块">
+CheckActivityAssociation，看下是否和DataAssociation统一集成大模块CheckActivityItemAssociation 也同时考虑，是否作为一张模块内聚的业务表，还是切换到data-association
+CheckActivity是否仅限于 branch 作为输入，包应该也可">
 <meta property="og:type" content="article">
 <meta property="og:title" content="超音速业务设计">
 <meta property="og:url" content="http://yoursite.com/2017/02/07/超音速业务设计优化/index.html">
 <meta property="og:site_name" content="marks' blog">
 <meta property="og:description" content="cibuild、checkitem、checknote等的状态，看下能否统一
-CheckActivityAssociation，看下是否和DataAssociation统一集成大模块">
-<meta property="og:updated_time" content="2017-02-07T09:20:36.000Z">
+CheckActivityAssociation，看下是否和DataAssociation统一集成大模块CheckActivityItemAssociation 也同时考虑，是否作为一张模块内聚的业务表，还是切换到data-association
+CheckActivity是否仅限于 branch 作为输入，包应该也可">
+<meta property="og:updated_time" content="2017-02-07T11:45:31.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="超音速业务设计">
 <meta name="twitter:description" content="cibuild、checkitem、checknote等的状态，看下能否统一
-CheckActivityAssociation，看下是否和DataAssociation统一集成大模块">
+CheckActivityAssociation，看下是否和DataAssociation统一集成大模块CheckActivityItemAssociation 也同时考虑，是否作为一张模块内聚的业务表，还是切换到data-association
+CheckActivity是否仅限于 branch 作为输入，包应该也可">
 
 
 
@@ -282,7 +285,7 @@ CheckActivityAssociation，看下是否和DataAssociation统一集成大模块">
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-02-07T17:19:22+08:00">
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-02-07T19:19:20+08:00">
                 2017-02-07
               </time>
             
@@ -320,9 +323,42 @@ CheckActivityAssociation，看下是否和DataAssociation统一集成大模块">
       
         <ol>
 <li>cibuild、checkitem、checknote等的状态，看下能否统一</li>
-<li>CheckActivityAssociation，看下是否和DataAssociation统一集成大模块</li>
-<li></li>
+<li>CheckActivityAssociation，看下是否和DataAssociation统一集成大模块<br>CheckActivityItemAssociation 也同时考虑，是否作为一张模块内聚的业务表，还是切换到data-association</li>
+<li>CheckActivity是否仅限于 branch 作为输入，包应该也可以是一个输入</li>
 </ol>
+<p>data-association（下面简称da）<br>背景：<br>超音速中存在大量的数据关联需求，基于将来数据查询优化、数据扁平化的设计思路，不使用多对多查询，而是使用关联表；<br>data-association存在的主要目的在于解决超音速中多处的数据关联需求，避免每个模块都重复造轮子。</p>
+<p>方案：</p>
+<table>
+<thead>
+<tr>
+<th>序号</th>
+<th>方案</th>
+<th>优点</th>
+<th>缺点</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>da作为统一服务，所有数据关联都使用该服务</td>
+<td>高效，不需要每个模块重复编写数据关联代码</td>
+<td>模块不够内聚，业务字段查询效率比较低；da引入服务复杂度</td>
+</tr>
+<tr>
+<td>2</td>
+<td>每个模块独立维护da</td>
+<td>模块功能内聚，简单</td>
+<td>da功能在多个模块中重复实现和维护，开发效率低</td>
+</tr>
+<tr>
+<td>3</td>
+<td>da作为功能插件，每个模块可以使用</td>
+<td>模块内聚，开发效率开</td>
+<td>功能插件的形式待预研</td>
+</tr>
+</tbody>
+</table>
+<p>建议选择方案3</p>
 
       
     </div>
@@ -357,8 +393,8 @@ CheckActivityAssociation，看下是否和DataAssociation统一集成大模块">
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/02/06/hello-world/" rel="next" title="Hello World">
-                <i class="fa fa-chevron-left"></i> Hello World
+              <a href="/2017/02/07/计划/201702/" rel="next" title="2017年02月计划">
+                <i class="fa fa-chevron-left"></i> 2017年02月计划
               </a>
             
           </div>
@@ -366,10 +402,6 @@ CheckActivityAssociation，看下是否和DataAssociation统一集成大模块">
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/02/07/计划/201702/" rel="prev" title="2017年02月计划">
-                2017年02月计划 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
