@@ -84,22 +84,37 @@
 
 
 
-<meta name="description" content="cibuild、checkitem、checknote等的状态，看下能否统一
-CheckActivityAssociation，看下是否和DataAssociation统一集成大模块CheckActivityItemAssociation 也同时考虑，是否作为一张模块内聚的业务表，还是切换到data-association
-CheckActivity是否仅限于 branch 作为输入，包应该也可">
+<meta name="description" content="状态常量统一
+cibuild、checkitem、checknote等的状态，看下能否统一
+
+业务思考
+CheckActivity是否仅限于 branch 作为输入，包应该也可以是一个输入
+process模块业务处理场景较多，目前通过executor作为统一入口调用执行，问题不大，但是可以往业务层上浮，而不是放在流程下层；另外，需要考虑如何提高流程业务编码的效率
+
+PreCheckAssociat">
 <meta property="og:type" content="article">
 <meta property="og:title" content="超音速业务设计">
 <meta property="og:url" content="http://yoursite.com/2017/02/07/超音速业务设计优化/index.html">
 <meta property="og:site_name" content="marks' blog">
-<meta property="og:description" content="cibuild、checkitem、checknote等的状态，看下能否统一
-CheckActivityAssociation，看下是否和DataAssociation统一集成大模块CheckActivityItemAssociation 也同时考虑，是否作为一张模块内聚的业务表，还是切换到data-association
-CheckActivity是否仅限于 branch 作为输入，包应该也可">
-<meta property="og:updated_time" content="2017-02-07T11:45:31.000Z">
+<meta property="og:description" content="状态常量统一
+cibuild、checkitem、checknote等的状态，看下能否统一
+
+业务思考
+CheckActivity是否仅限于 branch 作为输入，包应该也可以是一个输入
+process模块业务处理场景较多，目前通过executor作为统一入口调用执行，问题不大，但是可以往业务层上浮，而不是放在流程下层；另外，需要考虑如何提高流程业务编码的效率
+
+PreCheckAssociat">
+<meta property="og:updated_time" content="2017-02-18T07:10:51.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="超音速业务设计">
-<meta name="twitter:description" content="cibuild、checkitem、checknote等的状态，看下能否统一
-CheckActivityAssociation，看下是否和DataAssociation统一集成大模块CheckActivityItemAssociation 也同时考虑，是否作为一张模块内聚的业务表，还是切换到data-association
-CheckActivity是否仅限于 branch 作为输入，包应该也可">
+<meta name="twitter:description" content="状态常量统一
+cibuild、checkitem、checknote等的状态，看下能否统一
+
+业务思考
+CheckActivity是否仅限于 branch 作为输入，包应该也可以是一个输入
+process模块业务处理场景较多，目前通过executor作为统一入口调用执行，问题不大，但是可以往业务层上浮，而不是放在流程下层；另外，需要考虑如何提高流程业务编码的效率
+
+PreCheckAssociat">
 
 
 
@@ -321,13 +336,20 @@ CheckActivity是否仅限于 branch 作为输入，包应该也可">
       
 
       
-        <ol>
+        <h3 id="状态常量统一"><a href="#状态常量统一" class="headerlink" title="状态常量统一"></a>状态常量统一</h3><ol>
 <li>cibuild、checkitem、checknote等的状态，看下能否统一</li>
-<li>CheckActivityAssociation，看下是否和DataAssociation统一集成大模块<br>CheckActivityItemAssociation 也同时考虑，是否作为一张模块内聚的业务表，还是切换到data-association</li>
+</ol>
+<h3 id="业务思考"><a href="#业务思考" class="headerlink" title="业务思考"></a>业务思考</h3><ol>
 <li>CheckActivity是否仅限于 branch 作为输入，包应该也可以是一个输入</li>
+<li><p>process模块<br>业务处理场景较多，目前通过executor作为统一入口调用执行，问题不大，但是可以往业务层上浮，而不是放在流程下层；<br>另外，需要考虑如何提高流程业务编码的效率</p>
+</li>
+<li><p>PreCheckAssociationService，这一大类service，多余了，太重<br>4.</p>
+</li>
+</ol>
+<h3 id="模块服务"><a href="#模块服务" class="headerlink" title="模块服务"></a>模块服务</h3><ol>
+<li>CheckActivityAssociation，看下是否和DataAssociation统一集成大模块<br>CheckActivityItemAssociation 也同时考虑，是否作为一张模块内聚的业务表，还是切换到data-association</li>
 </ol>
 <p>data-association（下面简称da）<br>背景：<br>超音速中存在大量的数据关联需求，基于将来数据查询优化、数据扁平化的设计思路，不使用多对多查询，而是使用关联表；<br>data-association存在的主要目的在于解决超音速中多处的数据关联需求，避免每个模块都重复造轮子。</p>
-<p>方案：</p>
 <table>
 <thead>
 <tr>
@@ -359,6 +381,12 @@ CheckActivity是否仅限于 branch 作为输入，包应该也可">
 </tbody>
 </table>
 <p>建议选择方案3</p>
+<h3 id="异常处理"><a href="#异常处理" class="headerlink" title="异常处理"></a>异常处理</h3><ul>
+<li>网络异常、url异常等，这类异常用户无法处理，也不需要系统编程错误，只需要登记log，直接返回执行失败的标志即可，不需要一层层往上抛出错误；因为通常上层也不会处理；基于系统健壮性考虑，可以尝试进行重试机制</li>
+</ul>
+<p>思考：<br>流程节点的数据、参数、配置，应该归属到流程节点配置、还是在工具做配置、还是在产品做配置</p>
+<p>http:<br>query string，只是简单的key，value；http并无明确规定key-multi value的情况，看各web容器的实现</p>
+<p>研究下play.modules这个包的价值顺序</p>
 
       
     </div>
@@ -452,8 +480,17 @@ CheckActivity是否仅限于 branch 作为输入，包应该也可">
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel sidebar-panel-active">
+      <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="https://avatars1.githubusercontent.com/u/4434948?v=3&s=460"
@@ -466,7 +503,7 @@ CheckActivity是否仅限于 branch 作为输入，包应该也可">
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">6</span>
+                <span class="site-state-item-count">7</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -502,6 +539,22 @@ CheckActivity是否仅限于 branch 作为输入，包应该也可">
 
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#状态常量统一"><span class="nav-number">1.</span> <span class="nav-text">状态常量统一</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#业务思考"><span class="nav-number">2.</span> <span class="nav-text">业务思考</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#模块服务"><span class="nav-number">3.</span> <span class="nav-text">模块服务</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#异常处理"><span class="nav-number">4.</span> <span class="nav-text">异常处理</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
     </div>
