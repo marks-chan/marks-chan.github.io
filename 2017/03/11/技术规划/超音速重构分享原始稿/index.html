@@ -68,7 +68,7 @@
 <link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="超音速,组件发布,流程设计," />
+  <meta name="keywords" content="Hexo, NexT" />
 
 
 
@@ -84,46 +84,22 @@
 
 
 
-<meta name="description" content="app
-constants  meta data
-
-FlowNodeType  节点类型,目前为组件发布流程定制,包括DEV,TEST,LEADER这3个节点
-FlowResult  节点/流程结果,包括:初始状态,通过,失败,驳回
-FlowStatus  节点/流程状态,包括:初始状态,运行中,结束,取消
-
-
-models.flow  all about 数据
-
-FlowForm流程表单的数据,">
+<meta name="description" content="1，背景和痛点，业务诉求背景超音速从16年3月份启动开发，快速业务开发，经历了（时间轴）分支开发、分支灰度、版本发布、hotpatch发布，8人左右开发团队-todo确认主要是后端，前端小部分资源
+痛点经过一段时间快速演变，系统编程这样了。。。小模块多，30+，模块间依赖很复杂，牵一发动全身系统对接多，服务稳定无法获知
+诉求和架构目标这时候我们认为已经不得不动了，系统的模块正在进入混乱之中，将来的">
 <meta property="og:type" content="article">
-<meta property="og:title" content="组件发布流程的简要设计">
-<meta property="og:url" content="http://yoursite.com/2017/02/02/first-page/index.html">
+<meta property="og:title" content="marks' blog">
+<meta property="og:url" content="http://yoursite.com/2017/03/11/技术规划/超音速重构分享原始稿/index.html">
 <meta property="og:site_name" content="marks' blog">
-<meta property="og:description" content="app
-constants  meta data
-
-FlowNodeType  节点类型,目前为组件发布流程定制,包括DEV,TEST,LEADER这3个节点
-FlowResult  节点/流程结果,包括:初始状态,通过,失败,驳回
-FlowStatus  节点/流程状态,包括:初始状态,运行中,结束,取消
-
-
-models.flow  all about 数据
-
-FlowForm流程表单的数据,">
-<meta property="og:updated_time" content="2017-02-02T09:14:55.000Z">
+<meta property="og:description" content="1，背景和痛点，业务诉求背景超音速从16年3月份启动开发，快速业务开发，经历了（时间轴）分支开发、分支灰度、版本发布、hotpatch发布，8人左右开发团队-todo确认主要是后端，前端小部分资源
+痛点经过一段时间快速演变，系统编程这样了。。。小模块多，30+，模块间依赖很复杂，牵一发动全身系统对接多，服务稳定无法获知
+诉求和架构目标这时候我们认为已经不得不动了，系统的模块正在进入混乱之中，将来的">
+<meta property="og:updated_time" content="2017-03-12T01:52:58.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="组件发布流程的简要设计">
-<meta name="twitter:description" content="app
-constants  meta data
-
-FlowNodeType  节点类型,目前为组件发布流程定制,包括DEV,TEST,LEADER这3个节点
-FlowResult  节点/流程结果,包括:初始状态,通过,失败,驳回
-FlowStatus  节点/流程状态,包括:初始状态,运行中,结束,取消
-
-
-models.flow  all about 数据
-
-FlowForm流程表单的数据,">
+<meta name="twitter:title" content="marks' blog">
+<meta name="twitter:description" content="1，背景和痛点，业务诉求背景超音速从16年3月份启动开发，快速业务开发，经历了（时间轴）分支开发、分支灰度、版本发布、hotpatch发布，8人左右开发团队-todo确认主要是后端，前端小部分资源
+痛点经过一段时间快速演变，系统编程这样了。。。小模块多，30+，模块间依赖很复杂，牵一发动全身系统对接多，服务稳定无法获知
+诉求和架构目标这时候我们认为已经不得不动了，系统的模块正在进入混乱之中，将来的">
 
 
 
@@ -151,13 +127,13 @@ FlowForm流程表单的数据,">
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2017/02/02/first-page/"/>
+  <link rel="canonical" href="http://yoursite.com/2017/03/11/技术规划/超音速重构分享原始稿/"/>
 
 
 
 
 
-  <title> 组件发布流程的简要设计 | marks' blog </title>
+  <title>  | marks' blog </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -270,7 +246,7 @@ FlowForm流程表单的数据,">
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/02/02/first-page/">
+  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/03/11/技术规划/超音速重构分享原始稿/">
 
   <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
     <meta itemprop="name" content="杂货铺老板">
@@ -294,7 +270,7 @@ FlowForm流程表单的数据,">
             
             
               
-                组件发布流程的简要设计
+                
               
             
           </h1>
@@ -309,8 +285,8 @@ FlowForm流程表单的数据,">
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-02-02T17:14:55+08:00">
-                2017-02-02
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-03-11T12:03:38+08:00">
+                2017-03-11
               </time>
             
 
@@ -345,48 +321,19 @@ FlowForm流程表单的数据,">
       
 
       
-        <h3 id="app"><a href="#app" class="headerlink" title="app"></a>app</h3><ul>
-<li><p>constants<br>  <code>meta data</code></p>
-<ul>
-<li>FlowNodeType<br>  <code>节点类型,目前为组件发布流程定制,包括DEV,TEST,LEADER这3个节点</code></li>
-<li>FlowResult<br>  <code>节点/流程结果,包括:初始状态,通过,失败,驳回</code></li>
-<li>FlowStatus<br>  <code>节点/流程状态,包括:初始状态,运行中,结束,取消</code></li>
-</ul>
-</li>
-<li><p>models.flow<br>  <code>all about 数据</code></p>
-<ul>
-<li>FlowForm<br><code>流程表单的数据,记录整个流程的流转、状态和结果;行为有:启动,下一节点,结束,通过FlowFormEngine判断</code></li>
-<li>FlowNode<br><code>流程节点的数据,记录节点的流转、状态和结果;行为有:创建,结束,获取下一节点</code></li>
-</ul>
-</li>
-<li><p>service.flow<br>  <code>all about 流程流转的通用逻辑</code></p>
-<ul>
-<li>FlowFormService<br><code>流程的启动,流转,查询服务接口</code></li>
-</ul>
-</li>
-<li><p>dto.flow<br>  <code>all about 数据视图</code></p>
-<ul>
-<li>adapter<br>  <code>数据视图转换层</code><ul>
-<li>FlowFormAdapter</li>
-<li>FlowNodeAdapter</li>
-</ul>
-</li>
-<li>FlowFormDto<br><code>流程表单的数据视图</code></li>
-<li>FlowNodeDto<br><code>流程节点的数据视图</code></li>
-</ul>
-</li>
-</ul>
-<ul>
-<li><p>process<br>  <code>all about 业务逻辑, 可能经常变动的</code></p>
-<ul>
-<li>FlowFormEngine<br><code>根据流程和业务逻辑,产生下一节点</code></li>
-<li>FlowNodePostProcessor<br><code>节点后置处理</code></li>
-<li>FlowFormDataFetcher<br><code>获取,解析flow表单的业务数据内容</code></li>
-<li>FlowFormMailer<br><code>组件发布流程的邮件通知</code></li>
-</ul>
-</li>
-</ul>
-
+        <h1 id="1，背景和痛点，业务诉求"><a href="#1，背景和痛点，业务诉求" class="headerlink" title="1，背景和痛点，业务诉求"></a>1，背景和痛点，业务诉求</h1><h2 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h2><p>超音速从16年3月份启动开发，快速业务开发，经历了（时间轴）<br>分支开发、分支灰度、版本发布、hotpatch发布，8人左右开发团队-todo确认<br>主要是后端，前端小部分资源</p>
+<h2 id="痛点"><a href="#痛点" class="headerlink" title="痛点"></a>痛点</h2><p>经过一段时间快速演变，系统编程这样了。。。<br>小模块多，30+，模块间依赖很复杂，牵一发动全身<br>系统对接多，服务稳定无法获知</p>
+<h2 id="诉求和架构目标"><a href="#诉求和架构目标" class="headerlink" title="诉求和架构目标"></a>诉求和架构目标</h2><p>这时候我们认为已经不得不动了，<br>系统的模块正在进入混乱之中，将来的复杂度会导致效率下降xx%<br>业务还会继续快速迭代，产品功能会继续完善丰富，业务快速迭代，希望能够快快快</p>
+<p>目标：<br>1，稳定<br>2，可维护<br>3，效率<br>4，扩展性（业务上组件）</p>
+<h1 id="2，思路，方案"><a href="#2，思路，方案" class="headerlink" title="2，思路，方案"></a>2，思路，方案</h1><h2 id="分析"><a href="#分析" class="headerlink" title="分析"></a>分析</h2><h3 id="后端"><a href="#后端" class="headerlink" title="后端"></a>后端</h3><p>前后端研发量比1:2+，从量大的地方入手；后端的模块依赖已经非常混乱，当务之急，后端需要先解耦—》怎么拆<br>不仅是解决这个事情本身，希望沉淀经验，成为一套可复制的</p>
+<p>## </p>
+<h1 id="3，实施和效果"><a href="#3，实施和效果" class="headerlink" title="3，实施和效果"></a>3，实施和效果</h1><p>2步跨：</p>
+<h2 id="rpc-amp-消息解耦"><a href="#rpc-amp-消息解耦" class="headerlink" title="rpc&amp;消息解耦"></a>rpc&amp;消息解耦</h2><p>flashbuild</p>
+<h2 id="业务解耦"><a href="#业务解耦" class="headerlink" title="业务解耦"></a>业务解耦</h2><p>业务模块：流程，business-check<br>sdk化：N个</p>
+<h2 id="效果"><a href="#效果" class="headerlink" title="效果"></a>效果</h2><p>1，data-elf，code review，快速搭建<br>2，</p>
+<h1 id="4，后续演进"><a href="#4，后续演进" class="headerlink" title="4，后续演进"></a>4，后续演进</h1><h2 id="团队前端赋能"><a href="#团队前端赋能" class="headerlink" title="团队前端赋能"></a>团队前端赋能</h2><p>团队能力结构特性，研发模块改变，进行前后端分离，专注前后端质量<br>前端赋能，</p>
+<h2 id="后续做成的框架"><a href="#后续做成的框架" class="headerlink" title="后续做成的框架"></a>后续做成的框架</h2><h2 id="机制，持续演进，可复制"><a href="#机制，持续演进，可复制" class="headerlink" title="机制，持续演进，可复制"></a>机制，持续演进，可复制</h2><h3 id="超能技术委员会"><a href="#超能技术委员会" class="headerlink" title="超能技术委员会"></a>超能技术委员会</h3><h3 id="重新梳理研发-amp-代码规范"><a href="#重新梳理研发-amp-代码规范" class="headerlink" title="重新梳理研发&amp;代码规范"></a>重新梳理研发&amp;代码规范</h3><p>引入阿里代码规范</p>
+<h1 id="5，反思"><a href="#5，反思" class="headerlink" title="5，反思"></a>5，反思</h1><h1 id="6，参考资料"><a href="#6，参考资料" class="headerlink" title="6，参考资料"></a>6，参考资料</h1>
       
     </div>
 
@@ -407,20 +354,14 @@ FlowForm流程表单的数据,">
 
     <footer class="post-footer">
       
-        <div class="post-tags">
-          
-            <a href="/tags/超音速/" rel="tag"># 超音速</a>
-          
-            <a href="/tags/组件发布/" rel="tag"># 组件发布</a>
-          
-            <a href="/tags/流程设计/" rel="tag"># 流程设计</a>
-          
-        </div>
-      
 
       
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/03/10/技术规划/编译构建/" rel="next" title="">
+                <i class="fa fa-chevron-left"></i> 
+              </a>
             
           </div>
 
@@ -428,8 +369,8 @@ FlowForm流程表单的数据,">
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2017/02/02/2016QCON分享/" rel="prev" title="2016QCON分享">
-                2016QCON分享 <i class="fa fa-chevron-right"></i>
+              <a href="/2017/03/12/技术规划/mtl沟通要点/" rel="prev" title="">
+                 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -553,7 +494,7 @@ FlowForm流程表单的数据,">
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#app"><span class="nav-number">1.</span> <span class="nav-text">app</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1，背景和痛点，业务诉求"><span class="nav-number">1.</span> <span class="nav-text">1，背景和痛点，业务诉求</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#背景"><span class="nav-number">1.1.</span> <span class="nav-text">背景</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#痛点"><span class="nav-number">1.2.</span> <span class="nav-text">痛点</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#诉求和架构目标"><span class="nav-number">1.3.</span> <span class="nav-text">诉求和架构目标</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2，思路，方案"><span class="nav-number">2.</span> <span class="nav-text">2，思路，方案</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#分析"><span class="nav-number">2.1.</span> <span class="nav-text">分析</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#后端"><span class="nav-number">2.1.1.</span> <span class="nav-text">后端</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#3，实施和效果"><span class="nav-number">3.</span> <span class="nav-text">3，实施和效果</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#rpc-amp-消息解耦"><span class="nav-number">3.1.</span> <span class="nav-text">rpc&消息解耦</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#业务解耦"><span class="nav-number">3.2.</span> <span class="nav-text">业务解耦</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#效果"><span class="nav-number">3.3.</span> <span class="nav-text">效果</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#4，后续演进"><span class="nav-number">4.</span> <span class="nav-text">4，后续演进</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#团队前端赋能"><span class="nav-number">4.1.</span> <span class="nav-text">团队前端赋能</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#后续做成的框架"><span class="nav-number">4.2.</span> <span class="nav-text">后续做成的框架</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#机制，持续演进，可复制"><span class="nav-number">4.3.</span> <span class="nav-text">机制，持续演进，可复制</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#超能技术委员会"><span class="nav-number">4.3.1.</span> <span class="nav-text">超能技术委员会</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#重新梳理研发-amp-代码规范"><span class="nav-number">4.3.2.</span> <span class="nav-text">重新梳理研发&代码规范</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#5，反思"><span class="nav-number">5.</span> <span class="nav-text">5，反思</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#6，参考资料"><span class="nav-number">6.</span> <span class="nav-text">6，参考资料</span></a></li></ol></div>
             
 
           </div>

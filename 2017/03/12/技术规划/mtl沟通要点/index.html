@@ -68,7 +68,7 @@
 <link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="超音速,组件发布,流程设计," />
+  <meta name="keywords" content="Hexo, NexT" />
 
 
 
@@ -84,46 +84,52 @@
 
 
 
-<meta name="description" content="app
-constants  meta data
+<meta name="description" content="摩天轮业务流程
+整体项目运作模式，以及框架体系、背后的思路是什么
+组件依赖管理的逻辑，包括线下开发、线上测试、发布的场景，特别是组件集成发版的逻辑
+紧急集成、预集成、卡点的逻辑
+完整演示系统的功能流程
+发布流程是否标准化的，业务是否有定制
+测试工具的效率
+发布场景和策略
+哪些是可以作为公共服务的，以及对应如何做业务定制和适配
+研发、生产上的公司级别的规范
 
-FlowNodeType  节点类型,目前为组件发布流程定制,包括DEV,TEST,LEADER这3个节点
-FlowResult  节点/流程结果,包括:初始状态,通过,失败,驳回
-FlowStatus  节点/流程状态,包括:初始状态,运行中,结束,取消
-
-
-models.flow  all about 数据
-
-FlowForm流程表单的数据,">
+产品
+创建产品的3种类型，创建项目的2种">
 <meta property="og:type" content="article">
-<meta property="og:title" content="组件发布流程的简要设计">
-<meta property="og:url" content="http://yoursite.com/2017/02/02/first-page/index.html">
+<meta property="og:title" content="marks' blog">
+<meta property="og:url" content="http://yoursite.com/2017/03/12/技术规划/mtl沟通要点/index.html">
 <meta property="og:site_name" content="marks' blog">
-<meta property="og:description" content="app
-constants  meta data
+<meta property="og:description" content="摩天轮业务流程
+整体项目运作模式，以及框架体系、背后的思路是什么
+组件依赖管理的逻辑，包括线下开发、线上测试、发布的场景，特别是组件集成发版的逻辑
+紧急集成、预集成、卡点的逻辑
+完整演示系统的功能流程
+发布流程是否标准化的，业务是否有定制
+测试工具的效率
+发布场景和策略
+哪些是可以作为公共服务的，以及对应如何做业务定制和适配
+研发、生产上的公司级别的规范
 
-FlowNodeType  节点类型,目前为组件发布流程定制,包括DEV,TEST,LEADER这3个节点
-FlowResult  节点/流程结果,包括:初始状态,通过,失败,驳回
-FlowStatus  节点/流程状态,包括:初始状态,运行中,结束,取消
-
-
-models.flow  all about 数据
-
-FlowForm流程表单的数据,">
-<meta property="og:updated_time" content="2017-02-02T09:14:55.000Z">
+产品
+创建产品的3种类型，创建项目的2种">
+<meta property="og:updated_time" content="2017-03-13T03:54:05.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="组件发布流程的简要设计">
-<meta name="twitter:description" content="app
-constants  meta data
+<meta name="twitter:title" content="marks' blog">
+<meta name="twitter:description" content="摩天轮业务流程
+整体项目运作模式，以及框架体系、背后的思路是什么
+组件依赖管理的逻辑，包括线下开发、线上测试、发布的场景，特别是组件集成发版的逻辑
+紧急集成、预集成、卡点的逻辑
+完整演示系统的功能流程
+发布流程是否标准化的，业务是否有定制
+测试工具的效率
+发布场景和策略
+哪些是可以作为公共服务的，以及对应如何做业务定制和适配
+研发、生产上的公司级别的规范
 
-FlowNodeType  节点类型,目前为组件发布流程定制,包括DEV,TEST,LEADER这3个节点
-FlowResult  节点/流程结果,包括:初始状态,通过,失败,驳回
-FlowStatus  节点/流程状态,包括:初始状态,运行中,结束,取消
-
-
-models.flow  all about 数据
-
-FlowForm流程表单的数据,">
+产品
+创建产品的3种类型，创建项目的2种">
 
 
 
@@ -151,13 +157,13 @@ FlowForm流程表单的数据,">
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2017/02/02/first-page/"/>
+  <link rel="canonical" href="http://yoursite.com/2017/03/12/技术规划/mtl沟通要点/"/>
 
 
 
 
 
-  <title> 组件发布流程的简要设计 | marks' blog </title>
+  <title>  | marks' blog </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -270,7 +276,7 @@ FlowForm流程表单的数据,">
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/02/02/first-page/">
+  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/03/12/技术规划/mtl沟通要点/">
 
   <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
     <meta itemprop="name" content="杂货铺老板">
@@ -294,7 +300,7 @@ FlowForm流程表单的数据,">
             
             
               
-                组件发布流程的简要设计
+                
               
             
           </h1>
@@ -309,8 +315,8 @@ FlowForm流程表单的数据,">
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-02-02T17:14:55+08:00">
-                2017-02-02
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-03-12T09:52:58+08:00">
+                2017-03-12
               </time>
             
 
@@ -345,46 +351,32 @@ FlowForm流程表单的数据,">
       
 
       
-        <h3 id="app"><a href="#app" class="headerlink" title="app"></a>app</h3><ul>
-<li><p>constants<br>  <code>meta data</code></p>
-<ul>
-<li>FlowNodeType<br>  <code>节点类型,目前为组件发布流程定制,包括DEV,TEST,LEADER这3个节点</code></li>
-<li>FlowResult<br>  <code>节点/流程结果,包括:初始状态,通过,失败,驳回</code></li>
-<li>FlowStatus<br>  <code>节点/流程状态,包括:初始状态,运行中,结束,取消</code></li>
+        <h1 id="摩天轮"><a href="#摩天轮" class="headerlink" title="摩天轮"></a>摩天轮</h1><h2 id="业务流程"><a href="#业务流程" class="headerlink" title="业务流程"></a>业务流程</h2><ul>
+<li>整体项目运作模式，以及框架体系、背后的思路是什么</li>
+<li>组件依赖管理的逻辑，包括线下开发、线上测试、发布的场景，特别是组件集成发版的逻辑</li>
+<li>紧急集成、预集成、卡点的逻辑</li>
+<li>完整演示系统的功能流程</li>
+<li>发布流程是否标准化的，业务是否有定制</li>
+<li>测试工具的效率</li>
+<li>发布场景和策略</li>
+<li>哪些是可以作为公共服务的，以及对应如何做业务定制和适配</li>
+<li>研发、生产上的公司级别的规范</li>
 </ul>
-</li>
-<li><p>models.flow<br>  <code>all about 数据</code></p>
-<ul>
-<li>FlowForm<br><code>流程表单的数据,记录整个流程的流转、状态和结果;行为有:启动,下一节点,结束,通过FlowFormEngine判断</code></li>
-<li>FlowNode<br><code>流程节点的数据,记录节点的流转、状态和结果;行为有:创建,结束,获取下一节点</code></li>
+<h2 id="产品"><a href="#产品" class="headerlink" title="产品"></a>产品</h2><ul>
+<li>创建产品的3种类型，创建项目的2种类型</li>
+<li>渠道预装发布的管理</li>
 </ul>
-</li>
-<li><p>service.flow<br>  <code>all about 流程流转的通用逻辑</code></p>
-<ul>
-<li>FlowFormService<br><code>流程的启动,流转,查询服务接口</code></li>
+<h2 id="技术"><a href="#技术" class="headerlink" title="技术"></a>技术</h2><ul>
+<li>atlas框架的对接是怎么做的</li>
+<li>重点了解发布这块的架构，包括如何接入新的产品以及和超音速打通</li>
+<li>测试工具的对接，是否有统一标准，以及业务接入方式</li>
+<li>机器和环境管理，以及技术架构，是否能够直接复用服务或技术</li>
 </ul>
-</li>
-<li><p>dto.flow<br>  <code>all about 数据视图</code></p>
-<ul>
-<li>adapter<br>  <code>数据视图转换层</code><ul>
-<li>FlowFormAdapter</li>
-<li>FlowNodeAdapter</li>
+<h2 id="建设历程和经验"><a href="#建设历程和经验" class="headerlink" title="建设历程和经验"></a>建设历程和经验</h2><ul>
+<li>mtl支持组件集成等遇到过的坑</li>
 </ul>
-</li>
-<li>FlowFormDto<br><code>流程表单的数据视图</code></li>
-<li>FlowNodeDto<br><code>流程节点的数据视图</code></li>
-</ul>
-</li>
-</ul>
-<ul>
-<li><p>process<br>  <code>all about 业务逻辑, 可能经常变动的</code></p>
-<ul>
-<li>FlowFormEngine<br><code>根据流程和业务逻辑,产生下一节点</code></li>
-<li>FlowNodePostProcessor<br><code>节点后置处理</code></li>
-<li>FlowFormDataFetcher<br><code>获取,解析flow表单的业务数据内容</code></li>
-<li>FlowFormMailer<br><code>组件发布流程的邮件通知</code></li>
-</ul>
-</li>
+<h2 id="团队"><a href="#团队" class="headerlink" title="团队"></a>团队</h2><ul>
+<li>分工，如何支持业务定制、实施</li>
 </ul>
 
       
@@ -407,20 +399,14 @@ FlowForm流程表单的数据,">
 
     <footer class="post-footer">
       
-        <div class="post-tags">
-          
-            <a href="/tags/超音速/" rel="tag"># 超音速</a>
-          
-            <a href="/tags/组件发布/" rel="tag"># 组件发布</a>
-          
-            <a href="/tags/流程设计/" rel="tag"># 流程设计</a>
-          
-        </div>
-      
 
       
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/03/11/技术规划/超音速重构分享原始稿/" rel="next" title="">
+                <i class="fa fa-chevron-left"></i> 
+              </a>
             
           </div>
 
@@ -428,8 +414,8 @@ FlowForm流程表单的数据,">
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2017/02/02/2016QCON分享/" rel="prev" title="2016QCON分享">
-                2016QCON分享 <i class="fa fa-chevron-right"></i>
+              <a href="/2017/03/13/技术规划/aone沟通要点/" rel="prev" title="">
+                 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -553,7 +539,7 @@ FlowForm流程表单的数据,">
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#app"><span class="nav-number">1.</span> <span class="nav-text">app</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#摩天轮"><span class="nav-number">1.</span> <span class="nav-text">摩天轮</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#业务流程"><span class="nav-number">1.1.</span> <span class="nav-text">业务流程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#产品"><span class="nav-number">1.2.</span> <span class="nav-text">产品</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#技术"><span class="nav-number">1.3.</span> <span class="nav-text">技术</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#建设历程和经验"><span class="nav-number">1.4.</span> <span class="nav-text">建设历程和经验</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#团队"><span class="nav-number">1.5.</span> <span class="nav-text">团队</span></a></li></ol></li></ol></div>
             
 
           </div>
