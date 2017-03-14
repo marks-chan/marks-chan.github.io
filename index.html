@@ -558,7 +558,7 @@
               
                 
                 <a class="post-title-link" href="/2017/03/11/技术规划/超音速重构分享原始稿/" itemprop="url">
-                  未命名
+                  超音速架构演进
                 </a>
               
             
@@ -612,8 +612,9 @@
       
         
           
-            <h1 id="1，背景和痛点，业务诉求"><a href="#1，背景和痛点，业务诉求" class="headerlink" title="1，背景和痛点，业务诉求"></a>1，背景和痛点，业务诉求</h1><h2 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h2><p>超音速从16年3月份启动开发，快速业务开发，经历了（时间轴）<br>分支开发、分支灰度、版本发布、hotpatch发布，8人左右开发团队-todo确认<br>主要是后端，前端小部分资源</p>
-<h2 id="痛点"><a href="#痛点" class="headerlink" title="痛点"></a>痛点</h2><p>经过一段时间快速演变，系统编程这样了。。。<br>小模块多，30+，模块间依赖很复杂，牵一发动全身<br>系统对接多，服务稳定无法获知</p>
+            <h1 id="痛点"><a href="#痛点" class="headerlink" title="痛点"></a>痛点</h1><p>前后端工作量比1:2，研发资源比大概1:4，前端人力不足，研发效率受影响<br>存量代码2-3w的js，接近1w html<br>统一框架<br>维护成本，开发效率</p>
+<h1 id="1，背景和痛点，业务诉求"><a href="#1，背景和痛点，业务诉求" class="headerlink" title="1，背景和痛点，业务诉求"></a>1，背景和痛点，业务诉求</h1><h2 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h2><p>超音速从16年3月份启动开发，快速业务开发，经历了（时间轴）<br>分支开发、分支灰度、版本发布、hotpatch发布，8人左右开发团队-todo确认<br>主要是后端，前端小部分资源</p>
+<h2 id="痛点-1"><a href="#痛点-1" class="headerlink" title="痛点"></a>痛点</h2><p>经过一段时间快速演变，系统编程这样了。。。<br>小模块多，30+，模块间依赖很复杂，牵一发动全身<br>系统对接多，服务稳定无法获知</p>
 <h2 id="诉求和架构目标"><a href="#诉求和架构目标" class="headerlink" title="诉求和架构目标"></a>诉求和架构目标</h2><p>这时候我们认为已经不得不动了，<br>系统的模块正在进入混乱之中，将来的复杂度会导致效率下降xx%<br>业务还会继续快速迭代，产品功能会继续完善丰富，业务快速迭代，希望能够快快快</p>
 <p>目标：<br>1，稳定<br>2，可维护<br>3，效率<br>4，扩展性（业务上组件）</p>
 <h1 id="2，思路，方案"><a href="#2，思路，方案" class="headerlink" title="2，思路，方案"></a>2，思路，方案</h1><h2 id="分析"><a href="#分析" class="headerlink" title="分析"></a>分析</h2><h3 id="后端"><a href="#后端" class="headerlink" title="后端"></a>后端</h3><p>前后端研发量比1:2+，从量大的地方入手；后端的模块依赖已经非常混乱，当务之急，后端需要先解耦—》怎么拆<br>不仅是解决这个事情本身，希望沉淀经验，成为一套可复制的</p>
@@ -688,7 +689,7 @@
               
                 
                 <a class="post-title-link" href="/2017/03/10/技术规划/编译构建/" itemprop="url">
-                  未命名
+                  编译构建
                 </a>
               
             
@@ -743,125 +744,6 @@
         
           
             <h1 id="编译"><a href="#编译" class="headerlink" title="编译"></a>编译</h1><h2 id="增量编译（秒级编译能力）"><a href="#增量编译（秒级编译能力）" class="headerlink" title="增量编译（秒级编译能力）"></a>增量编译（秒级编译能力）</h2><h2 id="全量编译"><a href="#全量编译" class="headerlink" title="全量编译"></a>全量编译</h2><h1 id="构建"><a href="#构建" class="headerlink" title="构建"></a>构建</h1>
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/03/10/技术规划/前端重构讨论/">
-
-  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
-    <meta itemprop="name" content="杂货铺老板">
-    <meta itemprop="description" content="">
-    <meta itemprop="image" content="https://avatars1.githubusercontent.com/u/4434948?v=3&s=460">
-  </span>
-
-  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="marks' blog">
-    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
-      <img style="display:none;" itemprop="url image" alt="marks' blog" src="">
-    </span>
-  </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2017/03/10/技术规划/前端重构讨论/" itemprop="url">
-                  未命名
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-03-10T14:19:36+08:00">
-                2017-03-10
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-
-          
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h1 id="痛点"><a href="#痛点" class="headerlink" title="痛点"></a>痛点</h1><p>前后端工作量比1:2，研发资源比大概1:4，前端人力不足，研发效率受影响<br>存量代码2-3w的js，接近1w html<br>统一框架<br>维护成本，开发效率</p>
-
           
         
       
@@ -1529,6 +1411,175 @@
 
 
     
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/02/07/超音速业务设计优化/">
+
+  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="杂货铺老板">
+    <meta itemprop="description" content="">
+    <meta itemprop="image" content="https://avatars1.githubusercontent.com/u/4434948?v=3&s=460">
+  </span>
+
+  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="marks' blog">
+    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
+      <img style="display:none;" itemprop="url image" alt="marks' blog" src="">
+    </span>
+  </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2017/02/07/超音速业务设计优化/" itemprop="url">
+                  超音速业务设计
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-02-07T19:19:20+08:00">
+                2017-02-07
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h3 id="状态常量统一"><a href="#状态常量统一" class="headerlink" title="状态常量统一"></a>状态常量统一</h3><ol>
+<li>cibuild、checkitem、checknote等的状态，看下能否统一</li>
+</ol>
+<h3 id="业务思考"><a href="#业务思考" class="headerlink" title="业务思考"></a>业务思考</h3><ol>
+<li>CheckActivity是否仅限于 branch 作为输入，包应该也可以是一个输入</li>
+<li><p>process模块<br>业务处理场景较多，目前通过executor作为统一入口调用执行，问题不大，但是可以往业务层上浮，而不是放在流程下层；<br>另外，需要考虑如何提高流程业务编码的效率</p>
+</li>
+<li><p>PreCheckAssociationService，这一大类service，多余了，太重<br>4.</p>
+</li>
+</ol>
+<h3 id="模块服务"><a href="#模块服务" class="headerlink" title="模块服务"></a>模块服务</h3><ol>
+<li>CheckActivityAssociation，看下是否和DataAssociation统一集成大模块<br>CheckActivityItemAssociation 也同时考虑，是否作为一张模块内聚的业务表，还是切换到data-association</li>
+</ol>
+<p>data-association（下面简称da）<br>背景：<br>超音速中存在大量的数据关联需求，基于将来数据查询优化、数据扁平化的设计思路，不使用多对多查询，而是使用关联表；<br>data-association存在的主要目的在于解决超音速中多处的数据关联需求，避免每个模块都重复造轮子。</p>
+<table>
+<thead>
+<tr>
+<th>序号</th>
+<th>方案</th>
+<th>优点</th>
+<th>缺点</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>da作为统一服务，所有数据关联都使用该服务</td>
+<td>高效，不需要每个模块重复编写数据关联代码</td>
+<td>模块不够内聚，业务字段查询效率比较低；da引入服务复杂度</td>
+</tr>
+<tr>
+<td>2</td>
+<td>每个模块独立维护da</td>
+<td>模块功能内聚，简单</td>
+<td>da功能在多个模块中重复实现和维护，开发效率低</td>
+</tr>
+<tr>
+<td>3</td>
+<td>da作为功能插件，每个模块可以使用</td>
+<td>模块内聚，开发效率开</td>
+<td>功能插件的形式待预研</td>
+</tr>
+</tbody>
+</table>
+<p>建议选择方案3</p>
+<h3 id="异常处理"><a href="#异常处理" class="headerlink" title="异常处理"></a>异常处理</h3><ul>
+<li>网络异常、url异常等，这类异常用户无法处理，也不需要系统编程错误，只需要登记log，直接返回执行失败的标志即可，不需要一层层往上抛出错误；因为通常上层也不会处理；基于系统健壮性考虑，可以尝试进行重试机制</li>
+</ul>
+<p>思考：<br>流程节点的数据、参数、配置，应该归属到流程节点配置、还是在工具做配置、还是在产品做配置</p>
+<p>http:<br>query string，只是简单的key，value；http并无明确规定key-multi value的情况，看各web容器的实现</p>
+<p>研究下play.modules这个包的价值顺序</p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
   </section>
 
   
@@ -1576,7 +1627,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">15</span>
+                <span class="site-state-item-count">14</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -1594,7 +1645,7 @@
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">12</span>
+                <span class="site-state-item-count">13</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
