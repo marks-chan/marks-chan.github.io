@@ -68,7 +68,7 @@
 <link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="工程效率," />
+  <meta name="keywords" content="超音速,工程效率,摩天轮,组件化," />
 
 
 
@@ -90,15 +90,14 @@
 发布场景和策略、规范
 哪些是可以作为公共服务的，以及对应如何做业务定制和适配
 研发、生产上的公司级别的规范
-对接的上下游系统／平台是什么
 
-业务流程
-组件依赖管理的逻辑，包括线下开发、线上测试、发布的场景，特别是组件集成发版的逻辑
-紧急集成、预集成、卡点的逻辑
-完整演示系统的功能流程
-测试工具的">
+业务流程新概念：项目区，版本，集成区
+
+创建产品的3种类型，创建项目的2种类型 客户端，自动创建hotpatch（分支不同） 模块可以关联到客户端
+
+组件依赖管理的逻辑，包括线下开发、线">
 <meta property="og:type" content="article">
-<meta property="og:title" content="摩天轮沟通2017">
+<meta property="og:title" content="摩天轮组件化平台建设沟通">
 <meta property="og:url" content="http://yoursite.com/2017/03/12/技术规划/mtl沟通要点/index.html">
 <meta property="og:site_name" content="marks' blog">
 <meta property="og:description" content="摩天轮沟通框架
@@ -107,29 +106,27 @@
 发布场景和策略、规范
 哪些是可以作为公共服务的，以及对应如何做业务定制和适配
 研发、生产上的公司级别的规范
-对接的上下游系统／平台是什么
 
-业务流程
-组件依赖管理的逻辑，包括线下开发、线上测试、发布的场景，特别是组件集成发版的逻辑
-紧急集成、预集成、卡点的逻辑
-完整演示系统的功能流程
-测试工具的">
-<meta property="og:updated_time" content="2017-03-14T05:41:23.000Z">
+业务流程新概念：项目区，版本，集成区
+
+创建产品的3种类型，创建项目的2种类型 客户端，自动创建hotpatch（分支不同） 模块可以关联到客户端
+
+组件依赖管理的逻辑，包括线下开发、线">
+<meta property="og:updated_time" content="2017-03-15T07:19:44.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="摩天轮沟通2017">
+<meta name="twitter:title" content="摩天轮组件化平台建设沟通">
 <meta name="twitter:description" content="摩天轮沟通框架
 整体项目运作模式，以及框架体系、背后的思路是什么
 发布流程是否标准化的，业务是否有定制
 发布场景和策略、规范
 哪些是可以作为公共服务的，以及对应如何做业务定制和适配
 研发、生产上的公司级别的规范
-对接的上下游系统／平台是什么
 
-业务流程
-组件依赖管理的逻辑，包括线下开发、线上测试、发布的场景，特别是组件集成发版的逻辑
-紧急集成、预集成、卡点的逻辑
-完整演示系统的功能流程
-测试工具的">
+业务流程新概念：项目区，版本，集成区
+
+创建产品的3种类型，创建项目的2种类型 客户端，自动创建hotpatch（分支不同） 模块可以关联到客户端
+
+组件依赖管理的逻辑，包括线下开发、线">
 
 
 
@@ -163,7 +160,7 @@
 
 
 
-  <title> 摩天轮沟通2017 | marks' blog </title>
+  <title> 摩天轮组件化平台建设沟通 | marks' blog </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -300,7 +297,7 @@
             
             
               
-                摩天轮沟通2017
+                摩天轮组件化平台建设沟通
               
             
           </h1>
@@ -357,38 +354,71 @@
 <li>发布场景和策略、规范</li>
 <li>哪些是可以作为公共服务的，以及对应如何做业务定制和适配</li>
 <li>研发、生产上的公司级别的规范</li>
-<li>对接的上下游系统／平台是什么</li>
 </ul>
-<h2 id="业务流程"><a href="#业务流程" class="headerlink" title="业务流程"></a>业务流程</h2><ul>
-<li>组件依赖管理的逻辑，包括线下开发、线上测试、发布的场景，特别是组件集成发版的逻辑</li>
+<h2 id="业务流程"><a href="#业务流程" class="headerlink" title="业务流程"></a>业务流程</h2><p>新概念：项目区，版本，集成区</p>
+<ul>
+<li><p>创建产品的3种类型，创建项目的2种类型<br> 客户端，自动创建hotpatch（分支不同）<br> 模块可以关联到客户端</p>
+</li>
+<li><p>组件依赖管理的逻辑，包括线下开发、线上测试、发布的场景，特别是组件集成发版的逻辑</p>
+</li>
+</ul>
+<ol>
+<li>开发时一般是独立开发，需要打包时到摩天轮上进行打包；接下来计划做手机开发时的热部署，把整理代码热部署到本地研发测试手机</li>
+<li>集成、发布时，管理产物／二进制，不管理源代码</li>
+<li>有代码权限，才可以添加源码产品依赖，外部依赖不限制</li>
+<li>关联版本如何发布（A-&gt;B）<br>创建A项目，添加A模块的源码依赖，添加B模块的版本依赖，应用线上／集成区的依赖，测试打包等</li>
+<li>snapshot版本不允许集成</li>
+</ol>
+<ul>
 <li>紧急集成、预集成、卡点的逻辑</li>
-<li>完整演示系统的功能流程</li>
-<li>测试工具的效率</li>
 </ul>
-<h2 id="产品"><a href="#产品" class="headerlink" title="产品"></a>产品</h2><ul>
-<li>创建产品的3种类型，创建项目的2种类型</li>
-<li>渠道预装发布的管理</li>
+<ol>
+<li>集成区，用来对一个产品做集成发布（将N个模块／SDK的发布集成到一起发布）</li>
+<li>在单个模块项目中，创建集成单，来制定集成到那个集成区，从而发布；</li>
+<li>创建集成单的时候，会进行集成卡口，校验是否符合创建集成单的要求（例如静态代码检查等）</li>
+<li>创建集成单之后，进行预集成：先拉集成区的依赖来打包，解决以前直接集成导致打不出包的问题</li>
+<li>紧急集成，扣积分，定期做数据review</li>
+</ol>
+<ul>
+<li>发布流程<br>有一套完成的规范并落地</li>
+<li>响应回归<br>希望2个小时做完回归，但是不及时，就变成30分钟提醒一次，3次没有响应就升级</li>
+<li>适配回归怎么做的<br>外包资源测试，以及真机测试</li>
+<li>code review这些研发活动<br>更多是研发管理，没有在摩天轮做落地</li>
+<li>测试工具的效率<br>monkey大概30分钟，下一步有计划做 集成的检查流水线，自动做编译、构建、静态检查、monkey等</li>
+<li>andfix和热部署同时存在，主要原因是andfix适用范围更广</li>
+<li><p>线上版本的回滚<br>不建议做回滚，考虑模块依赖的复杂度；<br>一般紧急停止全量，快速bugfix然后热部署<br>灰度不做回滚</p>
+</li>
+<li><p>渠道预装发布的管理<br>只做一个包模版，改N个渠道号<br>预装要支持，可以考虑在打包模版里面做，现在mtl上本身不支持这么定制化的需求<br>渠道发布目前还是线下发</p>
+</li>
+<li><p>发布之后，会把关联的需求设为“已发布“</p>
+</li>
+<li>白名单<br>  产品发布策略，推拉结合</li>
+<li>卡口<br>  可以配置对性能、P1/P2的bug做卡点</li>
 </ul>
 <h2 id="技术"><a href="#技术" class="headerlink" title="技术"></a>技术</h2><ul>
-<li>atlas框架的对接是怎么做的</li>
-<li>重点了解发布这块的架构，包括如何接入新的产品以及和超音速打通</li>
-<li>测试工具的对接，是否有统一标准，以及业务接入方式</li>
-<li>机器和环境管理，以及技术架构，是否能够直接复用服务或技术</li>
-<li>文档和总结</li>
+<li><p>atlas框架的对接是怎么做的<br>服务器上部署框架即可，通过脚本执行</p>
+</li>
+<li><p>发布架构，包括如何接入新的产品以及和超音速打通<br> update-sdk，需要客户端支持（最好组件化，否则推送包可能比较大）<br> 推拉结合</p>
+</li>
+<li><p>测试工具的对接，是否有统一标准，以及业务接入方式<br>mcip管理后台，定制接入，封装成统一服务给摩天轮调用</p>
+</li>
+<li><p>机器和环境管理，以及技术架构，是否能够直接复用服务或技术<br>管理后台mtlmc，100多台服务器，另外手机也会在这里</p>
+</li>
+<li><p>文档和总结</p>
+</li>
 <li>mtl系统是否组件化的</li>
-<li>报表定制的组件化开发和自定义报表</li>
-<li>产品配置，业务模块、流程定制、卡点配置</li>
-<li>手机管理</li>
-<li>测试平台的建设和维护</li>
-</ul>
-<h2 id="建设历程和经验"><a href="#建设历程和经验" class="headerlink" title="建设历程和经验"></a>建设历程和经验</h2><ul>
-<li>mtl支持组件集成等遇到过的坑</li>
+<li><p>报表定制的组件化开发和自定义报表<br> 主要是贾乐负责</p>
+</li>
+<li><p>产品配置，业务模块、流程定制、卡点配置<br>暂无，将来做配置中心</p>
+</li>
+<li><p>手机管理<br>wwdm，技术上可以独立部署</p>
+</li>
 </ul>
 <h2 id="团队"><a href="#团队" class="headerlink" title="团队"></a>团队</h2><ul>
-<li>分工，如何支持业务定制、实施</li>
-<li>人力组成和配比</li>
+<li>人力组成和配比，开发同学：8个，其他团队的red，ui资源协助</li>
+<li>和架构组为同一大团队</li>
+<li>前后端框架，webx4.0，ice</li>
 </ul>
-<p>新概念：项目区，版本，集成区</p>
 
       
     </div>
@@ -412,7 +442,13 @@
       
         <div class="post-tags">
           
+            <a href="/tags/超音速/" rel="tag"># 超音速</a>
+          
             <a href="/tags/工程效率/" rel="tag"># 工程效率</a>
+          
+            <a href="/tags/摩天轮/" rel="tag"># 摩天轮</a>
+          
+            <a href="/tags/组件化/" rel="tag"># 组件化</a>
           
         </div>
       
@@ -521,7 +557,7 @@
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">13</span>
+                <span class="site-state-item-count">15</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -556,7 +592,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#摩天轮"><span class="nav-number">1.</span> <span class="nav-text">摩天轮</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#沟通框架"><span class="nav-number">1.1.</span> <span class="nav-text">沟通框架</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#业务流程"><span class="nav-number">1.2.</span> <span class="nav-text">业务流程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#产品"><span class="nav-number">1.3.</span> <span class="nav-text">产品</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#技术"><span class="nav-number">1.4.</span> <span class="nav-text">技术</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#建设历程和经验"><span class="nav-number">1.5.</span> <span class="nav-text">建设历程和经验</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#团队"><span class="nav-number">1.6.</span> <span class="nav-text">团队</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#摩天轮"><span class="nav-number">1.</span> <span class="nav-text">摩天轮</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#沟通框架"><span class="nav-number">1.1.</span> <span class="nav-text">沟通框架</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#业务流程"><span class="nav-number">1.2.</span> <span class="nav-text">业务流程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#技术"><span class="nav-number">1.3.</span> <span class="nav-text">技术</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#团队"><span class="nav-number">1.4.</span> <span class="nav-text">团队</span></a></li></ol></li></ol></div>
             
 
           </div>
